@@ -1,0 +1,41 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+
+{% block profile %}
+<div class="content-data">
+        <strong>Nome de Usuario:</strong>
+        <p>{{dataUser.user.username}}</p>
+        <strong>Email:</strong>
+        <p>{{dataUser.user.email}}</p>
+        <strong>Nome:</strong>
+        <p>{{dataUser.user.first_name}}</p>
+        
+        {% if user.is_candidate %}
+            <strong>CPF:</strong>
+            <p>{{dataUser.cpf}}</p>
+            
+            {% if  dataUser.curriculum%}
+            <strong>Curriculo:</strong>
+            <p>{{dataUser.curriculum}}</p>
+                
+            {% endif %}
+                
+
+
+        {% endif %}
+            
+        {% if user.is_company %}
+            <strong>CNPJ:</strong>
+            <p>{{dataUser.cnpj}}</p>
+            <strong>Nome do Responsável:</strong>
+            <p>{{dataUser.responsibly}}</p>
+        {% endif %}
+        <strong>WhatsApp:</strong>
+        <p>{{dataUser.whatsapp}}</p>
+        
+            
+    </div>
+        
+{% endblock profile %}
+    

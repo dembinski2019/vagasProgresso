@@ -1,0 +1,36 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+{% block css_profile %}<link rel="stylesheet" href={% static 'css/company_list_employtment.css' %}>{% endblock css_profile %}
+
+{% block profile %}
+    <div class="content-list-employtment">
+        {% if sucess %}
+        {% for vacancy in enrollment  %}
+        <div class="content-employtment-objects">
+                
+            <p><h2>{{vacancy.job.employtment_name}}</h2></p>
+            <strong><span>{{vacancy.job.company}}</span></strong>, {{vacancy.job.created_at}}<br>
+            <strong>Requisitos:</strong>
+            <p>{{vacancy.job.requirements}}</p>
+            <strong>Descrição:</strong>
+            <p>{{vacancy.job.description}}</p>
+            <strong>Salário:</strong> R$ {{vacancy.job.salary}}</p>
+            <strong>Vagas Disponíveis:</strong> {{vacancy.job.jobs_vacancy}}</p>
+                <div class="buttons-action">
+                    <a class="button-cancelar" href="{% url 'candidate_cancel_enrollment' vacancy.id %}">Cancelar inscrição</a>
+                </div>
+            </div>
+                    
+            {% endfor %}
+            {% else %}
+            <div class="errors">
+                <p>Você ainda não se candidatou em nenhuma vaga.</p>
+                <p>Clique <a href="{% url 'index' %}"> aqui</a> procurar novas vagas</p>
+            </div>
+            {% endif %}
+    </div>
+        
+    
+{% endblock profile %}
+    

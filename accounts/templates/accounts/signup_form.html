@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href={% static 'css/signup.css' %}>{% endblock css %}
+
+{% block main %}
+<div class="content-form">
+    <form method="POST">
+        {{ form.non_field_errors }}
+
+        {% csrf_token %}
+        <div class="col">
+        {% for field in form %}
+
+            <div class="fields">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+            
+            {% endfor %}
+        </div>
+        <div class="button-action">
+            <button class="button-cadastro">Cadastrar</button>
+        </div>
+    </form>
+</div>
+{% endblock main %}
+    

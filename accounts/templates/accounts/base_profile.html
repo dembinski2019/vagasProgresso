@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href={% static 'css/profile.css' %}>{% endblock css %}
+
+    
+
+{% block main %}
+<div class="content-main">
+    <div class="row-title">
+        <p>Bem Vindo, <span>{{user.first_name}}</span></p>
+    </div>
+    <div class="content-sections">
+        <div class="control-panel">
+            <ul>
+                <li><a href="{% url 'conta_profile' %}"> Home</a></li>
+                {% if user.is_candidate %}
+                <li><a href="{% url 'candidate_enrollment' %}"> Minhas Vagas</a></li>
+                <li><a href="{% url 'index' %}"> Encontrar Vagas</a></li>
+                <li>Meus Interesses</li>
+                {% else %}
+                <li><a href="{% url 'list_my_employtment' %}"> Minhas Vagas</a></li>
+                    <li><a href="{% url 'employtment_new_employtment' %}"> Nova Vagas</a></li>
+                {% endif %}
+                <li><a href="{% url 'conta_my_profile' %}">Meus Dados</a></li>
+
+            </ul>
+            <ul>
+                {% if user.is_candidate %}
+                    <li><a href="{% url 'conta_edit_profile_candidate' %} ">Editar Conta</a></li>
+                {% else %}
+                    <li><a href="{% url 'conta_edit_profile_company' %} ">Editar Conta</a></li>
+                {% endif %}
+                <li>Trocar Senha</li>
+                <li>Excluir Conta</li>
+                <li>Contato</li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
+            </ul>
+        </div>
+        
+        {% block profile %}
+            
+        {% endblock profile %}
+              
+    </div>
+</div>
+
+
+{% endblock main %}

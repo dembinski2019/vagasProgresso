@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Progresso: {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href={% static 'css/base.css' %}>
+    {% block css %}{% endblock css %}
+    {% block css_profile %}{% endblock css_profile %}
+        
+</head>
+<body>
+    <div class="content">
+        {% block header %}
+            
+            
+        <header>
+            <div class="logo">
+                <h1>Jobs Progresso</h1>
+                <p>Gerando Oportunides</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class="button active" href="{% url 'index' %}"> Home</a></li>
+                    {% if user.is_authenticated and user.is_candidate%}
+                        <li><a class="button " href="{% url 'conta_profile' %}">Candidato</a></li> 
+                    {% else %}                            
+                        <li><a class="button " href="{% url 'candidate_home' %}">Candidato</a></li>
+                    {% endif %}
+                    
+                    {% if user.is_authenticated and user.is_company%}
+                            <li><a class="button " href="{% url 'conta_profile' %}"> Empresa</a></li>
+                        {% else %}                            
+                            <li><a class="button " href="{% url 'company_home' %}"> Empresa</a></li>
+                    {% endif %}
+                    
+                    {% if user.is_authenticated %}
+                        <li><a class="button " href="{% url 'logout' %}">Sair</a></li>
+                    {% else %}
+                        <li><a class="button " href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                        
+                    
+                        
+                </ul>
+            </nav>
+        </header>
+        {% endblock header %}
+        
+    {% block main %}
+
+    {% endblock main %}
+        <footer class="content-footer">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}"> Home</a></li>
+                    <li><a href="{% url 'candidate_home' %}"> Candidato</a></li>
+                    <li><a href="{% url 'company_home' %}"> Empresa</a></li>
+                    
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'login' %}"> Sair</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}"> Login</a></li>
+                    {% endif %}
+                        
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p>&copy; Todos os direitos reservados - Desenvolvido por Everton Dembinski</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

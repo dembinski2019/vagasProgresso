@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href={% static 'css/company.css' %}>{% endblock css %}
+
+
+
+{% block main %}
+
+<img class="content-work-img" src="{% static 'img/jobs.png' %}" alt="Anúncio de vagas">
+<div class="content-header">
+    <section class="header-text">
+        <strong>Cadastre sua empresa e anuncie suas vagas de forma prática e rápida</strong>
+        
+        <p>Faça parte do melhor sistema de seleção de candidatos da cidade</p>
+        
+    </section>
+    <div class="content-button">
+        <a href="{% url 'cadastro_company' %}"> Cadastre-se grátis</a>
+    </div>
+    
+</div>
+
+<div class="content-benefits">
+    
+    <li>
+        <img src="{% static 'img/industria.png' %}" alt="Foto de uma industria">
+        <p>Alcance candidatos nas regiões vizinhas</p>
+    </li>
+    
+    <li>
+        <img src="{% static 'img/selecao.png' %}" alt="Foto de uma industria">
+        <p>Anuncie vagas de forma gratuita e agilize suas contratações</p>
+    </li>
+
+   <li> 
+        <img src="{% static 'img/industria.png' %}" alt="Foto de uma industria">
+        <p>Receba currículos e entre em contato de forma rápida e segura </p>
+    </li>
+
+</div>
+
+
+    
+{% endblock main %}
+    

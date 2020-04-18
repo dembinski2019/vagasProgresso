@@ -1,0 +1,61 @@
+.content-list-employtment{
+    display: inline-block;
+    width: 100%;
+    max-width: 780px;
+}
+.content-employtment-objects{
+    background: #fff;
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    line-height: 25px;
+    padding: 18px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 0 100px rgba(0,0, 0, 0.1);
+
+}
+.content-employtment-objects strong{
+    font-size: 1.1em;
+}
+.content-employtment-objects p{
+    margin-left: 15px;
+}
+.content-employtment-objects span{
+    font-size: 1.25em;
+}
+.content-employtment-objects h3{}
+.errors{
+    font-size: 1.2em;
+    color: #525256;
+    padding: 8px;
+    margin-left: 32px;
+    line-height: 30px;
+}
+.buttons-action{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse
+    
+}
+
+.button-edit, .button-delete, .button-candidate, .button-cancelar{
+    color: #f06a80;
+    border: 1px solid #f06a80;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-size: 1.2em;
+    margin-right: 10px;
+    width: 100px;
+    max-width: 100px;
+    text-align: center;
+}
+.button-cancelar{
+    width:200px ;
+    max-width: 200px;
+
+}

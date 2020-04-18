@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block css %}<link rel="stylesheet" href={% static 'css/home.css' %}>{% endblock css %}
+
+
+
+{% block main %}
+
+    <div class="content-main">
+        <main>
+            <div class="content-search"> 
+                <h1>Encontre sua vaga</h1>
+                <form action="{% url 'employtment_search' %}" class="form-main" method="GET">
+                    <input type="search" name="search" id="search" placeholder="Buscar">
+                    <button  type="submit">Buscar</button>
+                </form>
+            </div>
+            <img src={% static 'img/backgroud_main.png' %} alt="">
+        </main>
+    </div>
+
+
+
+
+
+
+{% endblock main %}
+    
+
+    

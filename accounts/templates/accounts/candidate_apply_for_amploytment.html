@@ -1,0 +1,35 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+{% block css_profile %}<link rel="stylesheet" href={% static 'css/list_enrollment.css' %}>{% endblock css_profile %}
+
+
+
+{% block profile %}
+
+<div class="content-table">
+    <div class="content-header">
+        <h2>Candidatos a vaga de: {{job}}</h2>
+    </div>
+    <table class="table-main">
+        <tr class="row-header">
+            <th>Candidato</th>
+            <th>E-mail</th>
+            <th>WhatsApp</th>
+            <th>Curriculo</th>
+        </tr>
+        
+    {% for field in enrollment %}
+        
+        <tr>
+            <td>{{field.candidate.user.first_name}}</td>
+            <td>{{field.candidate.user.email}}</td>
+            <td>{{field.candidate.whatsapp}}</td>
+            <td><a href="{{field.candidate.curriculum.url}}"target="_blank">Curriculo</a</td>
+
+        </tr>        
+    {% endfor %}            
+    </table>
+    
+</div>
+{% endblock profile %}
+    

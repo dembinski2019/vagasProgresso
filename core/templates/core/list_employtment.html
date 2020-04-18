@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href={% static 'css/list.css' %}>{% endblock css %}
+
+
+
+{% block main %}
+<div class="content-search"> 
+    <h1>Encontre sua vaga</h1>
+    <form action="{% url 'employtment_search' %}" class="form-main" method="GET">
+        <input type="search" name="search" id="search" placeholder="Buscar">
+        <button  type="submit">Buscar</button>
+    </form>
+</div>
+        <div class="content-list">
+
+                
+            {% if sucess %}             
+                <ul>
+                    {% for job in jobs  %}
+                        <li> 
+                            <a title="Detalhes" href="{% url 'employtment_detail' job.id %}">
+                                <strong>VAGA:</strong>
+                                <p>{{job.employtment_name}}</p>
+                                <strong>Requisitos:</strong>
+                                <p>{{job.requirements}}</p>
+                                <strong>Salário:</strong>
+                                
+                                {% if job.salary %}
+                                    <p>{{job.salary}}</p>
+                                {% else %}
+                                    <p>À combinar</p>
+                                {% endif %}
+                                    
+                                <strong>Vagas disponíveis</strong>
+                                <p>{{job.jobs_vacancy}}</p>
+                                <strong>Data do Post</strong>
+                                <p>{{job.created_at}}</p>
+                            </a>    
+                        </li>
+                    {% endfor %}             
+                </ul>
+            {% else %}
+                <div class="content-attention">
+                    <p><strong>Sua pesquisa não retornou nenhuma vaga. </strong></p>
+                    <p><strong>Sugestões:</strong></p>
+                 
+                    <li>Troque a palavra chave e tente novamente</li>
+                </div>
+            {% endif %}
+
+        </div>
+    </dvi>
+    
+{% endblock main %}
+    
+
+
+
+

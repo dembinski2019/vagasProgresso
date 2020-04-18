@@ -1,0 +1,38 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+
+
+{% block profile %}
+<div class="content-edit">
+    
+    {% if sucess %}
+        <p>Seus dados foram atualizados com sucesso.</p>
+    {% else %}
+        
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{formUser.non_fields_errors}}
+        {{userForm.non_fields_errors}}
+        <div class="form-control">
+
+            {% for fields in formUser  %}
+                {{fields.label_tag}}
+                {{fields}}
+                {{fields.errors}}
+            {% endfor %}
+
+            {% for fields in userForm  %}
+                {{fields.label_tag}}
+                {{fields}}
+                {{fields.errors}}
+            {% endfor %}
+            <div>
+                <button>Salvar</button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+</div>
+{% endblock profile %}
+    

@@ -1,0 +1,17 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+
+{% block profile %}
+<div class="content-data">
+    <form method="POST" class="form-control">
+        {% csrf_token %}
+        <h2>Deseja realmente excluir sua inscrição para a vaga de: </h2>
+        <br>
+        <p><strong> {{obj.job}}</strong> da empresa <strong>{{obj.job.company}}</strong></p>
+        <button >Excluir</button>
+    </form>
+</div>
+    
+{% endblock profile %}
+    

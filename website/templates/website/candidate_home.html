@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href={% static 'css/candidate.css' %}>{% endblock css %}
+
+{% block main %}
+    <main>
+        <div class="content-search"> 
+            <h1>Encontre sua vaga</h1>
+            <form action="{% url 'employtment_search' %}" class="form-main" method="GET">
+                <input type="search" name="search" id="search" placeholder="Buscar">
+                <button  type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="content-bg">
+            <div class="content-one">
+                <div class="content-img">
+                    <img src={% static 'img/procurando_emprego.png' %} alt="Procurando Emprego">
+                </div>
+
+                <div class="content-one-one">
+                    <h2 id="vagas">HÁ VAGAS</h2>
+                    <strong>Encontre sua oportunidade sem sair de casa</strong>
+                    <p>De maneira rápida, fácil e comoda</p>
+                    <div class="content-button">
+                        <a href="{% url 'cadastro_candidate' %}">Cadastre-se</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-comment">
+            <ul>
+                <li>
+                    <div class="comment">"Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Aenean aliquam molestie leo"
+                        <p>Fulano, ocupação</p>
+                    </div>
+                </li>
+                <li><div class="comment">"Vitae iaculis nisl. Detraxit consequat et quo num tendi nada. Si num tem leite então bota uma pinga aí cumpadi!"
+                    <p>Fulano, ocupação</p>
+
+                </div></li>
+                <li><div class="comment">"Vitae iaculis nisl. Detraxit consequat et quo num tendi nada. Si num tem leite então bota uma pinga aí cumpadi!"
+                        <p>Fulano, ocupação</p>
+
+                </div></li>
+            </ul>
+        </div>
+
+    </main>
+
+
+    
+{% endblock main %}
+    

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href={% static 'css/details_job.css' %}>{% endblock css %}
+
+
+
+{% block main %}
+<main>
+
+    <div class="content-search"> 
+        <h1>Encontre sua vaga</h1>
+        <form action="{% url 'employtment_search' %}" class="form-main" method="GET">
+            <input type="search" name="search" id="search" placeholder="Buscar">
+            <button  type="submit">Buscar</button>
+        </form>
+    </div>
+    <section class="details"> 
+            <strong>VAGA:</strong>
+            <p>{{job.employtment_name}}</p>
+            <strong>Requisitos:</strong>
+            <p>{{job.requirements}}</p>
+            <strong>Descrição:</strong>
+            <p>{{job.description}}</p>
+            <strong>Salário:</strong>
+            
+            {% if job.salary %}
+                <p>R$ {{job.salary}}</p>
+            {% else %}
+                <p>À combinar</p>
+            {% endif %}
+                
+            <strong>Vagas disponíveis:</strong>
+            <p>{{job.jobs_vacancy}}</p>
+            <strong>Data do Anúncio:</strong>
+            <p>{{job.created_at}}</p>
+            
+            <strong>Empresa:</strong>
+                {% if user.is_authenticated and user.is_candidate %}
+                    <p>{{job.company}}</p>
+                    <a class="button-details" href="{% url 'employtment_apply_for' job.id %}" > Candidatar-se</a>
+                {% else %}
+                    <p>Disponível apenas para cadastrados.</p>
+                {% endif %}
+                
+            
+            
+    </section>
+   
+</main>
+{% endblock main %}
+    

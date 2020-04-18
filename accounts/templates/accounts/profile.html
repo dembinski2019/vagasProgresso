@@ -1,0 +1,13 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+{% block profile %}
+    {% if user.is_candidate %}
+        {% include 'accounts/candidate_profile.html' %}
+    {% else %}
+        {% include 'accounts/company_profile.html' %}
+    {% endif %}
+{% endblock profile %}
+    
+
+    

@@ -1,0 +1,55 @@
+
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+
+
+{% block profile %}
+    
+    
+        <div class="content-edit">
+            
+            {% if sucess %}
+                <p>Sua vaga foi cadastrada com sucesso.</p>
+            {% else %}
+            <div class="header">
+                <h2>Cadastre uma nova vaga</h2>
+            </div>
+            <form class="" method="POST">
+                {% csrf_token %}
+                <div class="form-control">
+                
+                    {% for field in form %}
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                        {% endfor %}
+                    <div>
+                        <button>Cadastrar</button>
+                        <a href="#" class="button-cancel" >Cancelar</a>
+                    </div>
+                </div>
+
+            </form>
+            {% endif %}
+
+        </div>
+
+
+<script>
+
+        var slug = document.getElementById('id_slug')
+        slug.onfocus =set_slug
+    
+    function set_slug(){
+
+        slug.value = ""
+        var vaga = document.getElementById('id_employtment_name')
+       for (let c = 0; c < vaga.value.length; c++) {
+           console.log(vaga.value[c])
+           slug.value += vaga.value[c].toLowerCase().replace(' ','-').trim();
+           
+       }
+    }
+</script>
+{% endblock profile %}

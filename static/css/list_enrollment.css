@@ -1,0 +1,31 @@
+.content-table{
+    background: #fff;
+    width: 100%;
+    max-width: 85%;
+    height: auto;
+    margin-left: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 100px rgba(0, 0, 0,0.1);
+}
+.content-table .content-header{
+    margin: 20px;
+}
+.content-table .content-header h2{
+    text-align: center;
+    color: #525256;
+}
+
+.table-main{
+    width: 100%;
+    border-radius: 8px;
+    line-height: 2em;
+}
+.row-header{
+    font-size: 1.2em;
+    background-color: aqua;
+}
+table, th, td{
+    border: 1px solid #525256;
+    border-collapse: collapse;
+    padding: 8px;
+}

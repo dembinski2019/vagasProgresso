@@ -1,0 +1,167 @@
+.content-main{
+    margin: 32px auto;
+    width: 100%;
+    max-width: 90%;
+}
+.row-title{
+    font-size: 1.2em;
+    color: #525256;
+}
+.row-title span{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.content-sections{
+    display: flex;
+    width: 100%;
+    margin: 32px 0;
+}
+.control-panel {
+    background: #fff;
+    margin-right: 10px;
+    box-shadow: 0 0 100px rgba(0,0, 0, 0.1);
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+}
+.control-panel ul{
+    border-radius: 8px;
+    border: 1px solid #525256;
+    list-style: none;
+    line-height: 30px;
+    font-size: 15px;
+    color: #525256;
+    padding: 8px;
+}
+.control-panel ul a{
+    color: #525256;
+    display: inline-block;
+    text-decoration: none;    
+}
+
+.content-objects{
+    border-radius: 8px;
+    background: #b2dcf8;
+    margin:0 auto;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 100px rgba(0,0, 0, 0.1);
+    position: relative;
+}
+.content-objects-company{
+    border-radius: 8px;
+    background: #f8b2be;
+    margin:0 auto;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 100px rgba(0,0, 0, 0.1);
+    position: relative;
+}
+
+.content-dicas{
+    position: absolute;
+    top: 70px;
+    color: #525256;
+    left: 600px;
+    width: 170px;
+}
+.content-dicas p{
+    font-size: 1.2m;
+    text-align: left;
+    line-height: 1.4em;
+    margin-bottom: 14px;
+}
+.content-edit{
+    border-radius: 8px;
+    box-shadow: 0 0  100px rgba(0,0, 0, 0.1);
+}
+.content-edit, .content-data, .content-form{
+    width: 100%;
+    max-width: 80%;
+    background: #fff;
+    margin: 0 auto;
+    align-content: center;
+    padding: 20px;
+   
+}
+.content-edit .form-control{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    max-width: 80%;
+}
+.content-edit .form-control label, .content-data strong{
+    line-height: 2em;
+    font-size: 1.2em;
+    color: #525256;
+}
+.content-edit .header{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #525256;
+}
+.content-data  p{
+    font-size: 1.1em;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.content-edit .form-control textarea{
+    font-size: 1.2em;
+    line-height: 2em;
+    height: 120px;
+    border-bottom: 1px solid #949494;
+    margin-bottom: 10px;
+    padding-left:10px ;
+    border-radius: 8px;
+}
+.content-edit .form-control input {
+    font-size: 1.2em;
+    line-height: 2em;
+    border: 0;
+    border-bottom: 1px solid #949494;
+    margin-bottom: 10px;
+    padding-left:10px ;
+}
+.content-edit .form-control input:focus, .content-edit .form-control textarea:focus{
+    border-bottom: 2px solid #949494;
+
+}
+.content-edit .form-control div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.content-edit .form-control button ,.content-edit .form-control a{
+    border: 1px solid #f06a80;
+    background: #fff;
+    color: #f06a80;
+    width: 60%;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.4em;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.content-edit .form-control button:hover, .content-edit .form-control a:hover{
+    background: #f06a80;
+    color: #fff;
+}
+.form-control button{
+    border: 1px solid #f06a80;
+    background: #fff;
+    color: #f06a80;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.4em;
+    border-radius: 8px;
+    text-align: center;
+}

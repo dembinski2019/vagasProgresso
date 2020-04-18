@@ -1,0 +1,39 @@
+{% extends 'accounts/base_profile.html' %}
+{% load static %}
+
+{% block css_profile %}<link rel="stylesheet" href={% static 'css/company_list_employtment.css' %}>{% endblock css_profile %}
+
+{% block profile %}
+    <div class="content-list-employtment">
+        {% if sucess %}
+        {% for vacancy in employtment  %}
+                <div class="content-employtment-objects">
+                
+                <p><h3>{{vacancy.employtment_name}}</h3></p>
+                <strong><span>{{vacancy.company}}</span></strong>, {{vacancy.created_at}}<br>
+                <strong>Requisitos:</strong>
+                <p>{{vacancy.requirements}}</p>
+                <strong>Descrição:</strong>
+                <p>{{vacancy.description}}</p>
+                <strong>Salário:</strong> R$ {{vacancy.salary}}</p>
+                <strong>Vagas Disponíveis:</strong> {{vacancy.jobs_vacancy}}</p>
+                <div class="buttons-action">
+                    <a class="button-edit" href="#">Editar</a>
+                    <a class="button-delete" href="#">Deletar</a>
+                    <a class="button-candidate" 
+                    href="{% url 'candidate_apply_for_amploytment' vacancy.id %}">Cadastros</a>
+                </div>
+            </div>
+                    
+            {% endfor %}
+            {% else %}
+            <div class="errors">
+                <p>Você ainda não tem vagas cadastradas.</p>
+                <p>Clique <a href="{% url 'employtment_new_employtment' %}"> aqui</a> para cadastrá-las</p>
+            </div>
+            {% endif %}
+    </div>
+        
+    
+{% endblock profile %}
+    
