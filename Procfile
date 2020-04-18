@@ -1,1 +1,1 @@
-web: gunicorn epark.wsgi --log-file -
+web: gunicorn searchJobs.wsgi --log-file -
