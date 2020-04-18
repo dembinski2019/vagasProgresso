@@ -6,6 +6,9 @@ class User(AbstractUser):
     is_candidate = models.BooleanField(verbose_name='Candidato', default=False)
     is_company = models.BooleanField(verbose_name='Empresa',default=False)
 
+    def __str__(self):
+        return self.username
+    
     class Meta:
         verbose_name = 'Usuário'
         verbose_name_plural = 'Usuários'
@@ -15,7 +18,7 @@ class Candidate(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     cpf = models.CharField('CPF', max_length=11)
     whatsapp = models.CharField('WhatsApp', max_length=12)
-    curriculum = models.FileField("Curriculo", upload_to='candidate/curriculum', max_length=100)
+    curriculum = models.FileField("Curriculo", upload_to=f'static/candidate/curriculum', max_length=100)
     
     def __str__(self):
         return self.user.username
