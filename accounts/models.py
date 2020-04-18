@@ -15,7 +15,7 @@ class Candidate(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     cpf = models.CharField('CPF', max_length=11)
     whatsapp = models.CharField('WhatsApp', max_length=12)
-    curriculum = models.FileField("Curriculo", upload_to='midia/curriculum', max_length=100)
+    curriculum = models.FileField("Curriculo", upload_to='candidate/curriculum', max_length=100)
     
     def __str__(self):
         return self.user.username

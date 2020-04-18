@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://jobsprogresso.herokuapp.com/ ','localhost.com:8000','jobsprogresso.herokuapp.com' ]
+ALLOWED_HOSTS = ['https://jobsprogresso.herokuapp.com/ ','localhost','jobsprogresso.herokuapp.com' ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -83,6 +83,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, "media"),
+]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
