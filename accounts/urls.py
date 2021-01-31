@@ -1,6 +1,6 @@
 from django.urls import path,include
 from .views import candidate, company
-from .views.profile import (profile, edit_profile_candidate,edit_profile_company, 
+from .views.profile import (ProfileTemplateView, edit_profile_candidate,edit_profile_company, 
                 my_employtment, my_profile, 
                 candidate_apply_for_amploytment,
                 candidate_enrollment,candidate_enrollment_download_curriculum)
@@ -9,7 +9,7 @@ from .views.profile import (profile, edit_profile_candidate,edit_profile_company
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     
-    path('profile/', profile, name='conta_profile'),
+    path('profile/', ProfileTemplateView.as_view(), name='conta_profile'),
     path('profile/list/vagas/', my_employtment, name='list_my_employtment'),
     path('profile/list/vagas/inscritos/<int:id>', candidate_apply_for_amploytment, name='candidate_apply_for_amploytment'),   
 

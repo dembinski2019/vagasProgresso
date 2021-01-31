@@ -1,18 +1,16 @@
 from django.shortcuts import redirect, render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 from django.contrib.auth.decorators import login_required
 from ..forms import EditAccountForm, EditCandidateForm,EditCompanyForm
 from ..models import Candidate,Company
 from core.models import Employtment,Apply_for
 from ..decorators import company_required, candidate_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-@login_required
-def profile(request):
-    context = {}
+class ProfileTemplateView(LoginRequiredMixin, TemplateView):
     template_name = 'accounts/profile.html'
-    return render(request, template_name, context)
-
+    
 
 @login_required
 def edit_profile_candidate(request):
@@ -51,7 +49,6 @@ def edit_profile_company(request):
             context['sucess'] = True
     context['formUser'] = formUser
     context['userForm'] = userForm
-
     return render(request, template_name, context)
 
 
