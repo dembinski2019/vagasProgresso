@@ -6,7 +6,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://jobsprogresso.herokuapp.com/ ','localhost','jobsprogresso.herokuapp.com' ]
+ALLOWED_HOSTS = [
+    'localhost',
+    "https://vagasprogresso.herokuapp.com", 
+    "https://vagasprogresso.herokuapp.com/", 
+    "vagasprogresso.herokuapp.com",
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
